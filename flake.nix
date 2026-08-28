@@ -3,13 +3,24 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+
+    nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
   };
 
-  outputs = inputs: {
-    packages = builtins.mapAttrs (system: pkgs: {
-      hello = pkgs.hello;
+  outputs = { self, nixpkgs, nix-cachyos-kernel, ... }@inputs: {
+    nixosConfigurations.yae = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+      
+      modules = [
+        {
+	  nixpkgs.overlays = [
+            nix-cachyos-kernel.overlays.pinned
+	  ];
+	}
 
-      default = inputs.self.packages.${system}.hello;
-    }) inputs.nixpkgs.legacyPackages;
+	./configuration.nix
+	./hardware-configuration.nix
+      ];
+    };
   };
 }
