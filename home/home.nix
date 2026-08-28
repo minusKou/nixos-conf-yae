@@ -6,8 +6,11 @@
   };
 
   imports = [
+    ./fish
+    ./kitty
     ./niri
     ./noctalia
+    ./starship
   ];
 
   programs.home-manager.enable = true;

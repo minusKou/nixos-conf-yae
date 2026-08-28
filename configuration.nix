@@ -65,6 +65,7 @@
      git
      neovim
      pciutils
+     starship
      wget
   ];
 
