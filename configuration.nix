@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   imports = [
@@ -91,6 +91,15 @@
      pciutils
      wget
   ];
+
+  home-manager = {
+    useGlobalPkgs = true;
+    useUserPackages = true;
+    backupFileExtension = "bak";
+
+    extraSpecialArgs = { inherit inputs; };
+    users.alhanz = import ./home/home.nix;
+  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

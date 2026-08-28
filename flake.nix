@@ -11,7 +11,7 @@
     nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
   };
 
-  outputs = { self, nixpkgs, nix-cachyos-kernel, ... }@inputs: {
+  outputs = { self, nixpkgs, home-manager, nix-cachyos-kernel, ... }@inputs: {
     nixosConfigurations.yae = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       
