@@ -23,4 +23,9 @@
       };
     };
   };
+
+  environment.systemPackages = with pkgs; [
+    kitty
+    xwayland-satellite
+  ];
 }
