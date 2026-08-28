@@ -19,7 +19,9 @@
 	}
 
 	./configuration.nix
-	./hardware-configuration.nix
+	
+	# Read HW Configuration instead of Local
+	/etc/nixos/hardware-configuration.nix
       ];
     };
   };
