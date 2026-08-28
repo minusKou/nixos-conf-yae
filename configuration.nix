@@ -7,6 +7,7 @@
 {
   imports = [
     ./modules/desktop/niri.nix
+    ./modules/hardware/audio.nix
   ];
 
   # Bootloader.
