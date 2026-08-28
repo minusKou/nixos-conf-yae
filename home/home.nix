@@ -7,6 +7,7 @@
 
   imports = [
     ./niri
+    ./noctalia
   ];
 
   programs.home-manager.enable = true;

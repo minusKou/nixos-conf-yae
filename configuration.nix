@@ -6,6 +6,7 @@
 
 {
   imports = [
+    ./modules/desktop/fonts.nix
     ./modules/desktop/niri.nix
     ./modules/hardware/audio.nix
   ];
@@ -80,6 +81,7 @@
   # Application Services
   services = {
     cloudflare-warp.enable = true;
+    upower.enable = true;
   };
 
   system.stateVersion = "26.11";

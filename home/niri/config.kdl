@@ -11,3 +11,6 @@ include "custom/startup.kdl"
 include "custom/general.kdl"
 include "custom/rules.kdl"
 include "custom/keybinds.kdl"
+
+// Noctalia Color Scheme
+include "noctalia.kdl"
