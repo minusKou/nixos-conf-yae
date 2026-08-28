@@ -2,8 +2,12 @@
   description = "A very basic flake";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
+    nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
     nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
   };
 
@@ -22,6 +26,9 @@
 	
 	# Read HW Configuration instead of Local
 	/etc/nixos/hardware-configuration.nix
+
+	# Home Manager
+	home-manager.nixosModules.home-manager
       ];
     };
   };
