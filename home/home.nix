@@ -11,6 +11,7 @@
     ./niri
     ./noctalia
     ./starship
+    ./theme
   ];
 
   programs.home-manager.enable = true;

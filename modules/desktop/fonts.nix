@@ -17,12 +17,21 @@ let
   };
 in
 {
-  fonts.fontDir.enable = true;
+  fonts = {
+    fontconfig = {
+      enable = true;
+      defaultFonts = {
+        sansSerif = [ "Readex Pro" "DejaVu Sans" ];
+	monospace = [ "JetBrains Mono" "JetBrainsMono Nerd Font" ];
+      };
+    };
 
-  fonts.packages = with pkgs; [
-    jetbrains-mono
-    nerd-fonts.jetbrains-mono
+    fontDir.enable = true;
+    packages = with pkgs; [
+      jetbrains-mono
+      nerd-fonts.jetbrains-mono
 
-    custom-fonts
-  ];
+      custom-fonts
+    ];
+  };
 }
