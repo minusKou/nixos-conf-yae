@@ -10,6 +10,7 @@
     ./kitty
     ./niri
     ./noctalia
+    ./modules/programs/browser/zen
     ./starship
     ./theme
   ];
