@@ -24,7 +24,14 @@
     };
   };
 
-  environment.systemPackages = with pkgs; [
+  environment.systemPackages = with pkgs; [    
+    # Dolphin File Manager
+    kdePackages.dolphin
+    kdePackages.kio
+    kdePackages.kio-extras
+    kdePackages.ffmpegthumbs
+    kdePackages.kimageformats
+
     kitty
     xwayland-satellite
   ];
