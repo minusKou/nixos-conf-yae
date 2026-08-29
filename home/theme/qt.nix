@@ -47,8 +47,8 @@ in
   xdg.configFile."qt6ct/qt6ct.conf".text = qtConfig;
 
   home.packages = with pkgs; [
-    adw-gtk3
     bibata-cursors
+    kdePackages.breeze
     kdePackages.kcolorscheme
     kdePackages.kconfig
     kdePackages.kiconthemes
