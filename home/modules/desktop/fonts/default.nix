@@ -12,6 +12,8 @@ let
       ./windows-cjk-2.tar.gz
     ];
 
+    sourceRoot = ".";
+
     installPhase = ''
       runHook preInstall
       mkdir -p $out/share/fonts/truetype
