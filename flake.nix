@@ -18,29 +18,33 @@
       #home-manager.follows = "home-manager";
     };
 
+    catppuccin.url = "github:catppuccin/nix";
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
     nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
   };
 
-  outputs = { self, nixpkgs, home-manager, nix-cachyos-kernel, ... }@inputs: {
+  outputs = { self, nixpkgs, home-manager, nix-cachyos-kernel, catppuccin, ... }@inputs: {
     nixosConfigurations.yae = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       specialArgs = { inherit inputs; };
 
-      modules = [
-        {
-	  nixpkgs.overlays = [
-            nix-cachyos-kernel.overlays.pinned
-	  ];
-	}
+      modules = [{
+        nixpkgs.overlays = [
+          nix-cachyos-kernel.overlays.pinned
+        ];
+      }
 
-	./configuration.nix
-	
-	# Read HW Configuration instead of Local
-	/etc/nixos/hardware-configuration.nix
-
-	# Home Manager
-	home-manager.nixosModules.home-manager
+       	./configuration.nix
+        
+       	# Read HW Configuration instead of Local
+       	/etc/nixos/hardware-configuration.nix
+        
+       	#
+        #  Catppuccin NixOS Module
+        catppuccin.nixosModules.catppuccin
+        
+       	# Home Manager
+	      home-manager.nixosModules.home-manager
       ];
     };
   };

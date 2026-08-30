@@ -4,15 +4,6 @@
     ./system/modules
   ];
 
-  # Bootloader
-  boot = {
-    kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-bore-lto-x86_64-v4;
-    loader = {
-      systemd-boot.enable = true;
-      efi.canTouchEfiVariables = true;
-    };
-  };
-
   networking = {
     hostName = "yae";
     networkmanager.enable = true;
