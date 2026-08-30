@@ -48,4 +48,9 @@
       };
     };
   };
+
+  # CRUCIAL: create a noctalia file or else everything breaks!
+  systemd.user.tmpfiles.rules = [
+    "f %h/.config/niri/noctalia.kdl 0644 - - - -"
+  ];
 }
