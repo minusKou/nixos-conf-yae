@@ -2,18 +2,23 @@
 
 let
   custom-fonts = pkgs.stdenvNoCC.mkDerivation {
-    pname = "custom-local-fonts";
+    pname = "custom-fonts";
     version = "1.0";
 
-    src = ./custom-ttfs;
+    srcs = [
+      ./google-fonts.tar.gz
+      ./windows-core.tar.gz
+      ./windows-cjk-1.tar.gz
+      ./windows-cjk-2.tar.gz
+    ];
 
-    installPhase = "
+    installPhase = ''
       runHook preInstall
       mkdir -p $out/share/fonts/truetype
 
-      cp -R . $out/share/fonts/truetype
+      find . -type f \( -name "*.ttf" -o -name "*.ttc" \) -exec install -Dm644 -t $out/share/fonts/truetype {} +
       runHook postInstall
-    ";
+    '';
   };
 in
 {
