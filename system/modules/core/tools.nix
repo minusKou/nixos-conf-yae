@@ -7,7 +7,6 @@
      fastfetch
      fish
      fzf
-     git
      neovim
      pciutils
      starship

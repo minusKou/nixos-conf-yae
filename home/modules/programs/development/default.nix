@@ -1,5 +1,6 @@
 {
   imports = [
     ./editors
+    ./git.nix
   ];
 }
