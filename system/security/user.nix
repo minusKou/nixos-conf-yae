@@ -5,6 +5,5 @@
     isNormalUser = true;
     description = "alhanz";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [];
   };
 }

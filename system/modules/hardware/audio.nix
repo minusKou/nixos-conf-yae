@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ ... }:
 {
   services.pipewire = {
     enable = true;
@@ -10,9 +10,9 @@
     extraConfig.pipewire."92-low-latency" = {
       "context.properties" = {
         "default.clock.rate" = 48000;
-	"default.clock.quantum" = 64;
-	"default.clock.min-quantum" = 32;
-	"default.clock.max-quantum" = 1024;
+       	"default.clock.quantum" = 64;
+       	"default.clock.min-quantum" = 32;
+       	"default.clock.max-quantum" = 1024;
       };
     };
 
@@ -20,8 +20,8 @@
     extraConfig.pipewire-pulse."92-low-latency" = {
       "pulse.properties" = {
         "pulse.min.req" = "32/48000";
-	"pulse.min.frag" = "32/48000";
-	"pulse.min.quantum" = "32/48000";
+       	"pulse.min.frag" = "32/48000";
+       	"pulse.min.quantum" = "32/48000";
       };
     };
   };
