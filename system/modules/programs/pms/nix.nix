@@ -26,6 +26,7 @@
 
       # Binary Cache
       substituters = [
+        "https://cache.nixos.org"
         "https://attic.xuyh0120.win/lantian" # nix-cachyos-kernel
         "https://noctalia.cachix.org" # noctalia-shell
       ];
