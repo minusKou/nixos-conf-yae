@@ -1,4 +1,4 @@
-{ ... }:
+{ username, ... }:
 {
   programs.noctalia = {
     enable = true;
@@ -36,7 +36,7 @@
       wallpaper = {
         enable = true;
         fill_mode = "crop";
-        directory = "/home/alhanz/.config/niri";
+        directory = "/home/${username}/.config/niri";
       };
     };
   };

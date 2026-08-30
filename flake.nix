@@ -23,10 +23,13 @@
     nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
   };
 
-  outputs = { self, nixpkgs, home-manager, nix-cachyos-kernel, catppuccin, ... }@inputs: {
+  outputs = { self, nixpkgs, home-manager, nix-cachyos-kernel, catppuccin, ... }@inputs:
+  let
+    username = "alhanz";
+  in {
     nixosConfigurations.yae = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
-      specialArgs = { inherit inputs; };
+      specialArgs = { inherit inputs username; };
 
       modules = [{
         nixpkgs.overlays = [

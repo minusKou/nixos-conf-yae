@@ -1,4 +1,4 @@
-{ inputs, ... }:
+{ inputs, username, ... }:
 {
   imports = [
     ./system/modules
@@ -15,7 +15,7 @@
     useUserPackages = true;
     backupFileExtension = "bak";
 
-    extraSpecialArgs = { inherit inputs; };
+    extraSpecialArgs = { inherit inputs username; };
     users.alhanz = import ./home/home.nix;
   };
 

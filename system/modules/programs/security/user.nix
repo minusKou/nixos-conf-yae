@@ -1,7 +1,7 @@
-{ ... }:
+{ username, ... }:
 {
   # User account
-  users.users."alhanz" = {
+  users.users.${username} = {
     isNormalUser = true;
     description = "alhanz";
     extraGroups = [ "networkmanager" "wheel" ];
