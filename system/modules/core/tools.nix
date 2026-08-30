@@ -9,6 +9,7 @@
      fzf
      neovim
      pciutils
+     sbctl
      starship
      tree
      wget
