@@ -6,5 +6,6 @@
     ./hardware
     ./programs/network
     ./programs/pms
+    ./programs/security
   ];
 }
