@@ -1,5 +1,5 @@
 {
   imports = [
-    ./limine.nix
+    ./nix.nix
   ];
 }
