@@ -8,20 +8,28 @@
         mode = "dark";
        	source = "builtin";
        	builtin = "Rosé Pine";
-        
+
        	templates = {
           enable_builtin_templates = true;
        	  enable_community_templates = true;
-        
+
        	  builtin_ids = [
-        	   "btop"
-        	   "gtk3"
-        	   "gtk4"
-        	   "kitty"
-        	   "niri"
-        	   "starship"
-        	   "qt"
+            "btop"
+            "gtk3"
+            "gtk4"
+            "kitty"
+            "kcolorscheme"
+            "niri"
+            "starship"
+            "qt"
        	  ];
+
+          community_ids = [
+            "discord"
+            "fastfetch"
+            "neovim"
+            "zed"
+          ];
        	};
       };
 

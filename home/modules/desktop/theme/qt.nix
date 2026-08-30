@@ -25,19 +25,16 @@ stylesheets=@Invalid()
 toolbutton_style=4
 underline_shortcut=1
 wheel_scroll_lines=3
-
-[Troubleshooting]
-force_raster_widgets=1
-ignored_applications=@Invalid()
   '';
 in
 {
   # QT Theming
   qt = {
     enable = true;
-    platformTheme.name = "qtct";
+    platformTheme.name = "qt6ct";
+    style.name = "breeze";
   };
-  
+
   # Environment Variables
   home.sessionVariables = {
     QT_QPA_PLATFORM = "wayland;xcb";
@@ -52,6 +49,7 @@ in
     kdePackages.kcolorscheme
     kdePackages.kconfig
     kdePackages.kiconthemes
+    kdePackages.plasma-integration
     papirus-icon-theme
     qt6Packages.qt6ct
   ];
