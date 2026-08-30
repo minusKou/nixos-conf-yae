@@ -18,12 +18,11 @@
       #home-manager.follows = "home-manager";
     };
 
-    catppuccin.url = "github:catppuccin/nix";
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
     nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
   };
 
-  outputs = { self, nixpkgs, home-manager, nix-cachyos-kernel, catppuccin, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, nix-cachyos-kernel, ... }@inputs:
   let
     username = "alhanz";
   in {
@@ -41,11 +40,7 @@
         
        	# Read HW Configuration instead of Local
        	/etc/nixos/hardware-configuration.nix
-        
-       	#
-        #  Catppuccin NixOS Module
-        catppuccin.nixosModules.catppuccin
-        
+                
        	# Home Manager
 	      home-manager.nixosModules.home-manager
       ];

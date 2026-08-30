@@ -1,5 +1,5 @@
 {
   imports = [
-    ./limine.nix
+    ./systemd-boot.nix
   ];
 }
