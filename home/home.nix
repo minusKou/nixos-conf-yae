@@ -6,13 +6,7 @@
   };
 
   imports = [
-    ./fish
-    ./kitty
-    ./niri
-    ./noctalia
-    ./modules/programs/browser/zen
-    ./starship
-    ./theme
+    ./modules
   ];
 
   programs.home-manager.enable = true;

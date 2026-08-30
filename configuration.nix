@@ -1,14 +1,7 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-
 { config, pkgs, inputs, ... }:
-
 {
   imports = [
-    ./modules/desktop/fonts.nix
-    ./modules/desktop/niri.nix
-    ./modules/hardware/audio.nix
+    ./system/modules
   ];
 
   # Bootloader
@@ -24,6 +17,9 @@
     hostName = "yae";
     networkmanager.enable = true;
   };
+
+  # System-wide Font Directory
+  fonts.fontDir.enable = true;
 
   time.timeZone = "Asia/Manila";
 
@@ -79,10 +75,34 @@
     users.alhanz = import ./home/home.nix;
   };
 
+  # System-level Packages
+  programs = {
+    niri.enable = true;
+    xwayland.enable = true;
+  };
+
   # Application Services
   services = {
     cloudflare-warp.enable = true;
     upower.enable = true;
+
+    # Display Manager
+    greetd = {
+      enable = true;
+      settings = {
+        # Autologin
+        initial_session = {
+          command = "niri-session";
+          user = "alhanz";
+        };
+
+      # Fallback Session
+        default_session = {
+          command = "${pkgs.tuigreet}/bin/tuigreet --cmd niri-session";
+	  user = "greeter";
+        };
+      };
+    };
   };
 
   system.stateVersion = "26.11";

@@ -8,7 +8,7 @@ binds {
     Mod+Period { spawn-sh "noctalia msg panel-toggle launcher \"/emo \""; }
     Mod+C { spawn-sh "zeditor"; };
     Mod+E { spawn "dolphin"; }
-    Mod+W { spawn-sh "zen"; }
+    Mod+W { spawn-sh "zen-beta"; }
 
     Mod+Comma { spawn-sh "noctalia msg settings-toggle"; }
     Mod+L hotkey-overlay-title="Lock the Screen" { spawn-sh "noctalia msg session lock"; }

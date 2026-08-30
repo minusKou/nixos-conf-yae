@@ -5,7 +5,7 @@ let
     pname = "custom-local-fonts";
     version = "1.0";
 
-    src = ./fonts;
+    src = ./custom-ttfs;
 
     installPhase = "
       runHook preInstall
@@ -25,13 +25,11 @@ in
 	monospace = [ "JetBrains Mono" "JetBrainsMono Nerd Font" ];
       };
     };
-
-    fontDir.enable = true;
-    packages = with pkgs; [
-      jetbrains-mono
-      nerd-fonts.jetbrains-mono
-
-      custom-fonts
-    ];
   };
+
+  home.packages = with pkgs; [
+    jetbrains-mono
+    nerd-fonts.jetbrains-mono
+    custom-fonts
+  ];
 }
