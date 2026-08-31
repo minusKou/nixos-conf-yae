@@ -27,12 +27,14 @@
       # Binary Cache
       substituters = [
         "https://cache.nixos.org"
-        "https://attic.xuyh0120.win/lantian" # nix-cachyos-kernel
-        "https://noctalia.cachix.org" # noctalia-shell
+        "https://attic.xuyh0120.win/lantian"          # nix-cachyos-kernel
+        "https://noctalia.cachix.org"                 # noctalia-shell
+        "https://nix-cache.tokidoki.dev/tokidoki"     # nix-gaming-edge for proton-cachy
       ];
       trusted-public-keys = [
         "lantian:EeAUQ+W+6r7EtwnmYjeVwx5kOGEBpjlBfPlzGlTNvHc="
         "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4"
+        "tokidoki:MD4VWt3kK8Fmz3jkiGoNRJIW31/QAm7l1Dcgz2Xa4hk="
       ];
     };
   };

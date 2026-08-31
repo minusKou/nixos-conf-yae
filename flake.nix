@@ -12,6 +12,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nix-gaming-edge = {
+      url = "github:powerofthe69/nix-gaming-edge";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    
     noctalia = {
       url = "github:noctalia-dev/noctalia";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -25,9 +30,10 @@
     
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
     nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
+    nix-gaming.url = "github:fufexan/nix-gaming";
   };
 
-  outputs = { self, nixpkgs, home-manager, lanzaboote, nix-cachyos-kernel, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, lanzaboote, nix-cachyos-kernel, nix-gaming-edge, ... }@inputs:
   let
     username = "alhanz";
   in {
@@ -38,6 +44,7 @@
       modules = [{
         nixpkgs.overlays = [
           nix-cachyos-kernel.overlays.pinned
+          nix-gaming-edge.overlays.proton-cachyos
         ];
       }
 
