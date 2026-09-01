@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 {
   services.pipewire = {
     enable = true;
@@ -25,8 +25,33 @@
        	"pulse.min.quantum" = "32/48000";
       };
     };
+
+    # Disable BLE MIDI
+    wireplumber.extraConfig = {
+      "10-disable-ble-midi" = {
+        "wireplumber.profiles" = {
+          "main" = {
+            "monitor.bluez-midi" = "disabled";
+          };
+        };
+      };
+    };
   };
 
   # Use Realtime Scheduler for Performance
   security.rtkit.enable = true;
+
+  # Audio Utilities
+  environment.systemPackages = with pkgs; [
+    pavucontrol
+    qpwgraph
+    easyeffects
+  ];
+
+  # Disable dummy ALSA MIDI
+  boot.blacklistedKernelModules = [
+    "snd_seq_dummy"
+    "snd_seq_midi"
+    "snd_seq"
+  ];
 }
