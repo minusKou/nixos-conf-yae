@@ -1,15 +1,14 @@
 { ... }:
 {
-
-
   nix = {
+    # Automated nix garbage collection
     gc = {
       automatic = true;
       dates = "daily";
       options = "--delete-older-than 3d";
     };
 
-    # Nix store
+    # Optimize nix store
     optimise = {
       automatic = true;
       dates = [ "12:00" ];
@@ -29,12 +28,10 @@
         "https://cache.nixos.org"
         "https://nyx-cache.chaotic.cx"
         "https://noctalia.cachix.org"                 # noctalia-shell
-        "https://nix-cache.tokidoki.dev/tokidoki"     # nix-gaming-edge for proton-cachy
       ];
       trusted-public-keys = [
         "nyx-cache.chaotic.cx:dJxTrgMC3V3cFfyIiBQDQorG6k1LsqurH/srpMSq7qk="
         "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4"
-        "tokidoki:MD4VWt3kK8Fmz3jkiGoNRJIW31/QAm7l1Dcgz2Xa4hk="
       ];
     };
   };
