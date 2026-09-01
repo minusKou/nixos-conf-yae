@@ -12,11 +12,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nix-gaming-edge = {
-      url = "github:powerofthe69/nix-gaming-edge";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    
     noctalia = {
       url = "github:noctalia-dev/noctalia";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -27,13 +22,20 @@
       inputs.nixpkgs.follows = "nixpkgs";
       #home-manager.follows = "home-manager";
     };
-    
+
+    chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
-    nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
     nix-gaming.url = "github:fufexan/nix-gaming";
   };
 
-  outputs = { self, nixpkgs, home-manager, lanzaboote, nix-cachyos-kernel, nix-gaming-edge, ... }@inputs:
+  outputs = {
+    self,
+    nixpkgs,
+    home-manager,
+    lanzaboote,
+    chaotic,
+    ...
+  }@inputs:
   let
     username = "alhanz";
   in {
@@ -41,18 +43,16 @@
       system = "x86_64-linux";
       specialArgs = { inherit inputs username; };
 
-      modules = [{
-        nixpkgs.overlays = [
-          nix-cachyos-kernel.overlays.pinned
-          nix-gaming-edge.overlays.proton-cachyos
-        ];
-      }
+      modules = [
 
        	./configuration.nix
-        
+
        	# Read HW Configuration instead of Local
        	/etc/nixos/hardware-configuration.nix
-                
+
+        # Chaotic Nyx
+        chaotic.nixosModules.default
+
        	# Home Manager
 	      home-manager.nixosModules.home-manager
 
