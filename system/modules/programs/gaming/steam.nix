@@ -5,8 +5,9 @@
       enable = true;
 
       extraCompatPackages = with pkgs; [
-        proton-ge-bin
-        proton-cachyos-x86_64-v3
+        proton-ge-custom
+        proton-cachyos_x86_64_v3
       ];
+    };
   };
 }

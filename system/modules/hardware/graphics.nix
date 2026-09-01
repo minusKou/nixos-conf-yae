@@ -19,12 +19,7 @@
   hardware.nvidia = {
     modesetting.enable = true;
     open = false;
-    #nvidiaSettings = true;
-    #package = config.boot.kernelPackages.nvidiaPackages.bleeding_edge;
-    powerManagement = {
-      enable = true;
-      finegrained = true;
-    };
+    package = pkgs.nvidia_cachyos-bore;
   };
 
   # Persistent DRM symlinks to prevent dynamic card-shuffling on boot
