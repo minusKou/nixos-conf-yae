@@ -7,8 +7,12 @@
 
   programs.obs-studio = {
     enable = true;
-    plugins = with pkgs; [
-      obs-studio-plugins.wlrobs
+    package = pkgs.obs-studio.override {
+      cudaSupport = true;
+    };
+    plugins = with pkgs.obs-studio-plugins; [
+      obs-pipewire-audio-capture
+      obs-vkcapture
     ];
   };
 }
