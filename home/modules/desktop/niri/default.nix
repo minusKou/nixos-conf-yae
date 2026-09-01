@@ -17,11 +17,19 @@
     "f %h/.config/niri/custom/startup.kdl 0644 - - - -"
   ];
 
+  services.udiskie = {
+      enable = true;
+      automount = true;
+      notify = true;
+      tray = "never";
+    };
+  
   home.packages = with pkgs; [
     # Dolphin File Manager
     kdePackages.dolphin
     kdePackages.kio
     kdePackages.kio-extras
+    kdePackages.kio-fuse
     kdePackages.ffmpegthumbs
     kdePackages.kimageformats
 
