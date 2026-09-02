@@ -8,13 +8,6 @@
     "ssd"
     "discard=async"
   ];
-  fileSystems."/mnt/Jin".options = [
-    "noatime"
-    "compress=zstd:3"
-    "space_cache=v2"
-    "ssd"
-    "discard=async"
-  ];
 
   services = {
     # Force 'none' scheduler for NVMe drives
