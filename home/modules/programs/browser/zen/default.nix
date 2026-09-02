@@ -81,31 +81,6 @@
 
       pinsForce = true;
       pinsForceAction = "demote";
-      pins = {
-        "Telegram Web" = {
-          id = "5065293b-1c04-40ee-ba1d-99a231873864";
-          url = "https://web.telegram.org/k/";
-          isEssential = true;
-        };
-        "Hacker News" = {
-          id = "c90aabb4-0e7b-48a8-85a8-5245ea84f095";
-          url = "https://news.ycombinator.com/";
-          isEssential = true;
-        };
-      };
-
-      joinedTabs."Inside state" = let
-        state = spaces."Rendezvous".pins."State";
-      in {
-        id = "inside-state";
-        gridType = "vsep";
-        folderParentId = state.id;
-        tabs = [
-          state.pins."Cursor".id
-          state.pins."Codex".id
-          state.pins."Claude".id
-        ];
-      };
 
       containersForce = true;
 
@@ -115,79 +90,6 @@
           id = "572910e1-4468-4832-a869-0b3a93e2f165";
           icon = "chrome://browser/skin/zen-icons/selectable/navigate.svg";
           position = 1000;
-          pins = {
-            "GitHub" = {
-              id = "48e8a119-5a14-4826-9545-91c8e8dd3bf6";
-              url = "https://github.com";
-              position = 101;
-            };
-            "WhatsApp Web" = {
-              id = "1eabb6a3-911b-4fa9-9eaf-232a3703db19";
-              url = "https://web.whatsapp.com/";
-              position = 102;
-            };
-
-            "State" = {
-              id = "482bc905-c00c-4c49-8a56-367668bf70b9";
-              folderIcon = "chrome://browser/skin/zen-icons/selectable/eye.svg";
-              isGroup = true;
-              isFolderCollapsed = true;
-              editedTitle = true;
-              position = 200;
-
-              pins = {
-                "Cursor" = {
-                  id = "384413fa-89aa-408c-b7bb-260e49dea3d3";
-                  url = "https://cursor.com/dashboard/spending";
-                  position = 201;
-                  editedTitle = true;
-                  title = "Cursor Usage";
-                };
-                "Codex" = {
-                  id = "0dc25f8f-a801-46ed-853b-6d866622bc18";
-                  url = "https://chatgpt.com/codex/cloud/settings/analytics#usage";
-                  position = 201;
-                  editedTitle = true;
-                  title = "Codex Usage";
-                };
-                "Claude" = {
-                  id = "b9852a90-794e-4692-989b-bd2fb376bc54";
-                  url = "https://platform.claude.com/usage";
-                  position = 201;
-                  editedTitle = true;
-                  title = "Claude Usage";
-                };
-                "Tailscale" = {
-                  id = "4398f631-714c-450f-9b10-eb69ab27244a";
-                  url = "https://login.tailscale.com/admin/machines";
-                  position = 153;
-                };
-              };
-            };
-          };
-
-          liveFolders = {
-            "Prisma blog" = {
-              id = "4b552876-eb82-4e44-9ff9-8bd9cde6840b";
-              kind = "rss";
-              title = "Prisma blog";
-              feedUrl = "https://www.prisma.io/blog/rss.xml";
-              folderIcon = "https://www.prisma.io/favicon.ico";
-              position = 400;
-              maxItems = 3;
-              collapsed = true;
-              timeRange = 0;
-            };
-          };
-
-          routes = {
-            "GitHub" = {
-              reference = "github.com";
-              matchType = "equal-to";
-            };
-
-            "Tailscale".reference = "tailscale.com";
-          };
 
           theme = {
             type = "gradient";
