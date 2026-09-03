@@ -1,8 +1,9 @@
 { pkgs, ... }:
 {
-  home.packages = [
-    pkgs.shotcut
-    pkgs.ffmpeg
+  home.packages = with pkgs; [
+    ffmpeg
+    shotcut
+    vlc
   ];
 
   programs.obs-studio = {
@@ -11,8 +12,11 @@
       cudaSupport = true;
     };
     plugins = with pkgs.obs-studio-plugins; [
+      advanced-scene-switcher
       obs-pipewire-audio-capture
       obs-vkcapture
+      obs-teleport
+      distroav
     ];
   };
 }
