@@ -1,6 +1,7 @@
 {
   imports = [
     ./kernel.nix
+    ./specialisation.nix
     ./tools.nix
     ./tweaks.nix
   ];
