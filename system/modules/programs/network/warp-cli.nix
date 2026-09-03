@@ -1,6 +1,6 @@
 { pkgs, ... }:
 {
-  services.cloudflare-warp.enable = true;
+  services.cloudflare-warp.enable = false;
   environment.systemPackages = with pkgs; [
     cloudflare-warp
   ];
